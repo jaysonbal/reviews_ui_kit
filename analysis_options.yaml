@@ -1,0 +1,12 @@
+analyzer:
+  exclude:
+    - build/**
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Public API surface is deliberately documented (README + doc comments
+    # on every exported class) - this rule would otherwise also demand
+    # docs on private/internal members, which is noisier than useful here.
+    # Left as the flutter_lints default (off) intentionally; remove this
+    # comment if you decide to turn it on later.

@@ -1,0 +1,42 @@
+name: reviews_ui_kit
+description: >-
+  Ready-made rating summary, sortable/filterable review list, review cards,
+  and a star-picker form for Flutter — plug in your own review data.
+version: 0.1.0
+homepage: https://www.azarrapps.com/our-products/reviews-ui-kit
+repository: https://github.com/jaysonbal/reviews_ui_kit
+
+# Shown in the carousel on the package's pub.dev listing page.
+screenshots:
+  - description: 'OverallRatingSummary - the rating breakdown widget'
+    path: assets/screenshot-summary.png
+  - description: 'A sortable, filterable review list with review cards'
+    path: assets/screenshot-list.png
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+# Both floors match what most apps already pin (cached_network_image ^3.3.0,
+# shimmer ^3.0.0, per masterz_konnect's own pubspec.yaml). Upper bounds
+# widened past their 4.0.0 majors after checking both changelogs: both
+# 4.0.0 releases were the same change - a Flutter SDK floor bump to 3.44+
+# for the new standalone `material_ui` package - not an API change to
+# CachedNetworkImage/CachedNetworkImageProvider or Shimmer.fromColors,
+# which is all this package actually calls. Same reasoning quick_share_row
+# applied to share_plus - see that package's pubspec.yaml comment.
+dependencies:
+  flutter:
+    sdk: flutter
+  cached_network_image: '>=3.3.0 <5.0.0'
+  shimmer: '>=3.0.0 <5.0.0'
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: '>=3.0.0 <6.0.0'
+
+flutter:
+  # No assets/fonts of its own - every icon is a Material IconData, and
+  # avatars/attachments are always network images the consuming app
+  # supplies a URL for.
