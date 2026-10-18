@@ -65,7 +65,10 @@ class ReviewFilterSheet extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             const SizedBox(height: 8),
             for (final opt in ReviewSortOption.values)
@@ -84,7 +87,11 @@ class ReviewFilterSheet extends StatelessWidget {
                   ),
                 ),
                 trailing: current == opt
-                    ? Icon(Icons.check_rounded, color: activeColor, size: 18)
+                    ? Icon(
+                        Icons.check_rounded,
+                        color: activeColor,
+                        size: 18,
+                      )
                     : null,
               ),
             const SizedBox(height: 8),

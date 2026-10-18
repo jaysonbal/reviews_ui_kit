@@ -35,7 +35,11 @@ class OverallRatingSummary extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Icon(Icons.star_rounded, color: starColor, size: 32),
+              Icon(
+                Icons.star_rounded,
+                color: starColor,
+                size: 32,
+              ),
               const SizedBox(width: 6),
               Text(
                 averageRating.toStringAsFixed(1),
@@ -44,6 +48,7 @@ class OverallRatingSummary extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   height: 1,
+                  letterSpacing: -0.25,
                 ),
               ),
               const SizedBox(width: 8),
@@ -51,7 +56,10 @@ class OverallRatingSummary extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 3),
                 child: Text(
                   '($totalReviews review${totalReviews != 1 ? 's' : ''})',
-                  style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF888888),
+                  ),
                 ),
               ),
             ],
@@ -59,7 +67,11 @@ class OverallRatingSummary extends StatelessWidget {
           if (subRatings.isNotEmpty) ...[
             const SizedBox(height: 14),
             for (final entry in subRatings.entries)
-              _DetailRatingRow(entry.key, entry.value, starColor),
+              _DetailRatingRow(
+                entry.key,
+                entry.value,
+                starColor,
+              ),
           ],
         ],
       ),
@@ -71,7 +83,11 @@ class _DetailRatingRow extends StatelessWidget {
   final String label;
   final double value;
   final Color starColor;
-  const _DetailRatingRow(this.label, this.value, this.starColor);
+  const _DetailRatingRow(
+    this.label,
+    this.value,
+    this.starColor,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +96,13 @@ class _DetailRatingRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: const TextStyle(fontSize: 13, color: Color(0xFF666666))),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 13,
+              color: Color(0xFF666666),
+            ),
+          ),
           Row(
             children: [
               Icon(Icons.star, size: 13, color: starColor),

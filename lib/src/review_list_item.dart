@@ -62,15 +62,15 @@ class ReviewListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final customerName = review.customerName.isEmpty
-        ? 'Anonymous'
-        : review.customerName;
+    final customerName =
+        review.customerName.isEmpty ? 'Anonymous' : review.customerName;
     final vendorName =
         (review.vendorName ?? '').isEmpty ? 'Seller' : review.vendorName!;
     final hasText = (review.reviewText ?? '').trim().isNotEmpty;
     final country = review.country;
-    final flagPrefix =
-        country != null && flagBuilder != null ? '${flagBuilder!(country)} ' : '';
+    final flagPrefix = country != null && flagBuilder != null
+        ? '${flagBuilder!(country)} '
+        : '';
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 400),
@@ -182,7 +182,8 @@ class ReviewListItem extends StatelessWidget {
                           ),
                         ),
                       ] else ...[
-                        BigStarRating(rating: review.rating, starColor: starColor),
+                        BigStarRating(
+                            rating: review.rating, starColor: starColor),
                       ],
 
                       /// Attachments
@@ -193,13 +194,15 @@ class ReviewListItem extends StatelessWidget {
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemCount: review.attachments.length,
-                            separatorBuilder: (_, __) => const SizedBox(width: 8),
+                            separatorBuilder: (_, __) =>
+                                const SizedBox(width: 8),
                             itemBuilder: (ctx, i) => SizedBox(
                               width: 90,
                               height: 90,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
-                                child: (attachmentBuilder ?? _defaultAttachment)(
+                                child:
+                                    (attachmentBuilder ?? _defaultAttachment)(
                                   ctx,
                                   review.attachments[i],
                                   review.attachments,
@@ -232,8 +235,10 @@ class ReviewListItem extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   color: replyBubbleColor,
                                   borderRadius: BorderRadius.circular(10),
-                                  border:
-                                      Border.all(color: replyBubbleBorderColor, width: 1),
+                                  border: Border.all(
+                                    color: replyBubbleBorderColor,
+                                    width: 1,
+                                  ),
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -245,8 +250,11 @@ class ReviewListItem extends StatelessWidget {
                                           backgroundColor: Colors.grey.shade300,
                                           child: CircleAvatar(
                                             radius: 13,
-                                            backgroundColor: Colors.grey.shade800,
-                                            backgroundImage: review.vendorAvatar != null
+                                            backgroundColor:
+                                                Colors.grey.shade800,
+                                            backgroundImage: review
+                                                        .vendorAvatar !=
+                                                    null
                                                 ? CachedNetworkImageProvider(
                                                     review.vendorAvatar!)
                                                 : null,
@@ -255,7 +263,8 @@ class ReviewListItem extends StatelessWidget {
                                                     vendorName[0].toUpperCase(),
                                                     style: const TextStyle(
                                                       color: Colors.white,
-                                                      fontWeight: FontWeight.w500,
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       fontSize: 14,
                                                     ),
                                                   )
@@ -312,7 +321,10 @@ class ReviewListItem extends StatelessWidget {
       width: double.infinity,
       errorWidget: (_, __, ___) => Container(
         color: const Color(0xFFE0E0E0),
-        child: const Icon(Icons.insert_drive_file_outlined, color: Colors.black26),
+        child: const Icon(
+          Icons.insert_drive_file_outlined,
+          color: Colors.black26,
+        ),
       ),
       progressIndicatorBuilder: (context, url, progress) => Container(
         color: Colors.grey.shade200,

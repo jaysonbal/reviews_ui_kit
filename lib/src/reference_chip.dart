@@ -46,7 +46,8 @@ class ReferenceChip extends StatelessWidget {
                       width: 44,
                       height: 44,
                       fit: BoxFit.cover,
-                      errorWidget: (_, __, ___) => _Placeholder(placeholderIcon),
+                      errorWidget: (_, __, ___) =>
+                          _Placeholder(placeholderIcon),
                     )
                   : _Placeholder(placeholderIcon),
             ),
@@ -68,7 +69,8 @@ class ReferenceChip extends StatelessWidget {
                   ),
                   if (rating != null)
                     Text(
-                      '★ ${rating!.toStringAsFixed(1)} (${reviewCount ?? 0} reviews)',
+                      '★ ${rating!.toStringAsFixed(1)} '
+                      '(${reviewCount ?? 0} reviews)',
                       style: const TextStyle(
                         fontSize: 13,
                         letterSpacing: -0.25,
@@ -82,7 +84,11 @@ class ReferenceChip extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 6),
-            const Icon(Icons.chevron_right_rounded, color: Colors.black54, size: 18),
+            const Icon(
+              Icons.chevron_right_rounded,
+              color: Colors.black54,
+              size: 18,
+            ),
           ],
         ),
       ),
@@ -100,7 +106,11 @@ class _Placeholder extends StatelessWidget {
       width: 44,
       height: 44,
       color: const Color(0xFFE0E0E0),
-      child: Icon(icon, size: 20, color: Colors.black26),
+      child: Icon(
+        icon,
+        size: 20,
+        color: Colors.black26,
+      ),
     );
   }
 }

@@ -8,7 +8,11 @@ class _Bone extends StatelessWidget {
   final double height;
   final double radius;
 
-  const _Bone({required this.width, required this.height, this.radius = 6});
+  const _Bone({
+    required this.width,
+    required this.height,
+    this.radius = 6,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,20 +48,34 @@ class ReviewListItemShimmer extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const _Bone(width: 44, height: 44, radius: 22),
+                    const _Bone(
+                      width: 44,
+                      height: 44,
+                      radius: 22,
+                    ),
                     const SizedBox(width: 12),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const _Bone(width: 120, height: 13),
+                          const _Bone(
+                            width: 120,
+                            height: 13,
+                          ),
                           const SizedBox(height: 6),
-                          _Bone(width: 70, height: 11, radius: 5),
+                          _Bone(
+                            width: 70,
+                            height: 11,
+                            radius: 5,
+                          ),
                         ],
                       ),
                     ),
                     const SizedBox(width: 12),
-                    const _Bone(width: 48, height: 13),
+                    const _Bone(
+                      width: 48,
+                      height: 13,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -91,7 +109,10 @@ class ReviewLoadMoreShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [ReviewListItemShimmer(), ReviewListItemShimmer()],
+      children: [
+        ReviewListItemShimmer(),
+        ReviewListItemShimmer(),
+      ],
     );
   }
 }
@@ -100,12 +121,18 @@ class ReviewLoadMoreShimmer extends StatelessWidget {
 /// for a whole review list screen.
 class ReviewListShimmer extends StatelessWidget {
   final int count;
-  const ReviewListShimmer({super.key, this.count = 5});
+  const ReviewListShimmer({
+    super.key,
+    this.count = 5,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(count, (_) => const ReviewListItemShimmer()),
+      children: List.generate(
+        count,
+        (_) => const ReviewListItemShimmer(),
+      ),
     );
   }
 }

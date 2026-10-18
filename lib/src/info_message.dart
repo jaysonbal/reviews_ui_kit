@@ -26,12 +26,19 @@ class InfoMessage extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon, size: 20, color: iconColor),
+          Icon(
+            icon,
+            size: 20,
+            color: iconColor,
+          ),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               message,
-              style: TextStyle(fontSize: 12, color: Colors.grey.shade800),
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey.shade800,
+              ),
             ),
           ),
         ],

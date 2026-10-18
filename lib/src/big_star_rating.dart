@@ -27,13 +27,25 @@ class BigStarRating extends StatelessWidget {
       children: [
         ...List.generate(
           full,
-          (_) => Icon(Icons.star_rounded, color: starColor, size: iconSize),
+          (_) => Icon(
+            Icons.star_rounded,
+            color: starColor,
+            size: iconSize,
+          ),
         ),
-        if (half) Icon(Icons.star_half_rounded, color: starColor, size: 20),
+        if (half)
+          Icon(
+            Icons.star_half_rounded,
+            color: starColor,
+            size: 20,
+          ),
         ...List.generate(
           5 - full - (half ? 1 : 0),
-          (_) =>
-              Icon(Icons.star_outline_rounded, color: starColor, size: iconSize),
+          (_) => Icon(
+            Icons.star_outline_rounded,
+            color: starColor,
+            size: iconSize,
+          ),
         ),
         const SizedBox(width: 4),
         Text(
